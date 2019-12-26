@@ -1,0 +1,31 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        <span class='user-name'><%= @user.name %></span>
+        <br>
+        <span>Email: <%= @user.email %></span>
+        <br>
+        <section class="stats_follower">
+          <%= render partial: 'common_pages/follow_detail', :locals => {following: false}%>
+        </section>
+        <section class="stats_following">
+          <%= render partial: 'common_pages/follow_detail', :locals => {following: true}%>
+        </section>
+      </h1>
+    </section>
+  </aside>
+
+  <div class="col-md-8">
+    <%= render 'common_pages/follow_form' if user_signed_in? %>
+    <% if @user.posts.any? %>
+        <h3>Posts (<%= @user.posts.count %>)</h3>
+        <ol class="posts">
+          <%= render @posts %>
+        </ol>
+        <%= will_paginate @posts %>
+    <% end %>
+  </div>
+
+</div>

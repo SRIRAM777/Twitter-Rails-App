@@ -1,0 +1,288 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+
+}
+
+/* universal */
+
+body {
+  padding-top: 60px;
+  background: url("https://wallpaperplay.com/walls/full/f/2/a/222085.jpg");
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+  position: relative;
+  border: 10px solid #1a1a1a;
+  border-color: #1a1a1a;
+  background-color: #ffffff;
+  border-width: 5px;
+  color: #1a1a1a;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+    display:inline-block;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.user-info-details{
+  display:block;
+  padding-top: 45px;
+}
+
+.btn-primary{
+	color:#ffffff;
+	background-color:#1a1a1a;
+}
+
+
+.stats_follower, .stats_following {
+  display:inline;
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -5px;
+  margin-bottom: 10px;
+
+  span {
+    margin-left: 20px;
+    font-weight: lighter;
+  }
+
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0px;
+}
+
+/* Users Index page */
+
+.users {
+  list-style: none;
+  margin: 0;
+li {
+  overflow: auto;
+  padding: 10px 0;
+  border-bottom: 1px solid $gray-lighter;
+}
+}
+
+/* posts */
+
+.posts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+    width: 300px;
+  }
+}
+
+#followers, #following{
+  font-size: 20px;
+  color: black;
+}
+
+.user-name{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+a.user-link{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+a.user-content{
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+}
+
+.comment-content{
+  font-size: 15px;
+  color: black;
+  font-weight: bold;
+}
+
+.comment-textarea {
+  resize: vertical;
+  position: relative;
+  border: 1px solid #1a1a1a;
+  border-width: 2px;
+  color: #1a1a1a;
+}
+
+.submit-comment{
+  color:#ffffff;
+  background-color:#1a1a1a;
+}

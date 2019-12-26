@@ -1,0 +1,26 @@
+<% if user_signed_in? %>
+<div class="row">
+	<aside class="col-md-4">
+        <section class="stats_follower">
+          <%= render partial: 'common_pages/follow_detail', :locals => {following: false}%>
+        </section>
+        <section class="stats_following">
+          <%= render partial: 'common_pages/follow_detail', :locals => {following: true}%>
+        </section>
+        <div class='user-info-details'>
+        <section class="user_info">
+        	<%= render 'common_pages/post_form' %>
+        </section>
+      </div>
+    </aside>
+    <div class="col-md-8">
+        <h3>Posts Timeline</h3>
+        <%= render 'common_pages/timeline' %>
+    </div>
+</div>
+<% else %>
+<div class="center jumbotron">
+  <h1>Welcome to Twitter</h1>
+  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+</div>
+<% end %>

@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Check out the new post from <%= @post['user_name'] %>!</p>
+    <p>
+    Post details<br>
+    --------------------------
+    </p>
+    <p>Content: <%= @post['content']%></p>
+    <p>User: <%= @post['user_name'] %></p>
+    <p>Email: <%= @post['user_email']%></p>
+  </body>
+</html>

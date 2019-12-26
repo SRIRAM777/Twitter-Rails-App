@@ -1,0 +1,31 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h4>
+          <span class="user-post-<%=@post.id%>">
+            Posted by <%= @post.user.name %>
+          </span>
+          <p>
+          <span class="user-post-content">
+            Post Content <%= @post.content %>
+          </span>
+        </p>
+        <p>
+          <span class='user-post-comments'>
+              
+          </span>
+      </h4>
+    </section>
+  </aside>
+</div>
+
+<h3>Comments</h3>
+
+<%= form_for [@post, Comment.new] do |f| %>
+  <%= f.text_area :body, placeholder: "Add a comment" ,class:'comment-textarea'%><br/>
+  <%= f.submit "Add Comment" ,class:'submit-comment'%>
+<% end %>
+
+<ul>
+  <%= render partial: 'comments/reply', collection: @post.comments, as: :reply %>
+</ul>

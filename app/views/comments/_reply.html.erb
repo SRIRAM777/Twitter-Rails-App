@@ -1,0 +1,22 @@
+<li>
+  <small class='comment-content'><%= reply.body %></small> -
+  <small>Submitted <%= time_ago_in_words(reply.created_at) %> ago</small>
+  <% unless reply.commenter.nil? %>
+    <small>, Commented by <%= commented_user_name(reply.commenter) %>
+    </small>
+  <% end %>
+  <% if current_user.id == (reply.commenter) %>
+      <%= link_to "Delete", reply, method: :delete,
+                  data: { confirm: "You sure?" } %>
+  <% end %>
+
+  <%= form_for [reply, Comment.new] do |f| %>
+      <%= f.text_area :body, placeholder: "Add a Reply" ,class:'comment-textarea'%><br/>
+      <%= f.submit "Reply"  ,class:'submit-comment'%>
+  <% end %>
+
+  <ul>
+      <%= render partial: 'comments/reply', collection: reply.comments %>
+  </ul>
+
+</li>
