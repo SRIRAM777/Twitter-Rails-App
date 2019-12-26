@@ -1,24 +1,19 @@
-# README
+# Twitter Clone Rails App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+Check out this repository and then run,
 
-* Ruby version
+```console
+$ bundle install
+$ bundle exec rails db:migrate
+$ bundle exec rails server
+```
 
-* System dependencies
+## Features
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Post new Tweet
+* See tweets timeline
+* Comment and Reply to Tweets
+* Follow/Unfollow User
+* Send new tweet email to users using Sidekiq.
